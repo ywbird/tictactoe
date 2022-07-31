@@ -1,7 +1,7 @@
 const gameElement = document.getElementById('gameElement');
 
-// const socket = io('https://fast-inlet-41976.herokuapp.com/');
-const socket = io('http://localhost:3000');
+const socket = io('https://fast-inlet-41976.herokuapp.com/');
+// const socket = io('http://localhost:3000');
 
 socket.on('init', handleInit);
 socket.on('gameState', handleGameState);
