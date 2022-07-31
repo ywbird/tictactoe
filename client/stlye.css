@@ -1,0 +1,23 @@
+.row {
+  border-bottom: 2px solid black;
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.cell {
+  display: block;
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+}
+
+.cell:first-child {
+  border-right: 2px solid black;
+}
+
+.cell:last-child {
+  border-left: 2px solid black;
+  border-right: 0;
+}
