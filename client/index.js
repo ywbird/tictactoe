@@ -9,7 +9,6 @@ socket.on('gameOver', handleGameOver);
 socket.on('gameCode', handleGameCode);
 socket.on('unknownCode', handleUnknownCode);
 socket.on('roomFull', handleRoomFull);
-socket.on('turn', handleTurn);
 
 const gameScreen = document.getElementById('gameScreen');
 const initialScreen = document.getElementById('initialScreen');
@@ -28,6 +27,7 @@ function newGame() {
 }
 
 function joinGame() {
+  if (!gameCodeInput.value) return;
   const code = gameCodeInput.value;
   socket.emit('joinGame', code);
   init();
@@ -59,7 +59,7 @@ function init() {
   gameActive = true;
 }
 
-function btnClick(e) {
+function btnClick() {
   const cell = this.id.split('-').map((c) => parseInt(c));
   socket.emit('btnClick', { cell, player });
 }
@@ -79,6 +79,9 @@ function handleInit(data) {
 
 function handleUnknownCode() {
   alert("Unkown Code(Room doesn' exist)");
+  gameScreen.style.display = 'none';
+  gameElement.innerHTML = '';
+  initialScreen.style.display = 'block';
 }
 
 function handleRoomFull() {
@@ -111,8 +114,4 @@ function handleGameOver(data) {
   } else if (data.winner === 'draw') {
     alert('draw');
   }
-}
-
-function handleTurn(turn) {
-  gameTurnDisplay.innerText = turn;
 }
