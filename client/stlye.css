@@ -1,5 +1,5 @@
 .row {
-  border-bottom: 2px solid black;
+  border-bottom: 0.4rem solid black;
 }
 
 .row:last-child {
@@ -14,10 +14,33 @@
 }
 
 .cell:first-child {
-  border-right: 2px solid black;
+  border-right: 0.4rem solid black;
 }
 
 .cell:last-child {
-  border-left: 2px solid black;
+  border-left: 0.4rem solid black;
   border-right: 0;
+}
+
+@media only screen and (min-width: 377px) {
+  h1 {
+    font-size: 4em;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  body {
+    -webkit-text-size-adjust: none;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
+
+#gameScreen {
+  display: none;
+}
+
+.or {
+  font-size: 2em;
 }

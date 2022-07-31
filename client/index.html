@@ -18,20 +18,41 @@
           <div
             class="d-flex flex-column align-items-center justify-content-center h-100"
           >
-            <h1>Web Tic Tac Toe</h1>
-            <button type="submit" class="btn btn-success" id="newGameButton">
+            <h1>Tic Tac Toe</h1>
+            <button
+              type="submit"
+              class="btn btn-success btn-lg"
+              id="newGameButton"
+            >
               Create New Game
             </button>
-            <div>OR</div>
+            <div class="or">OR</div>
             <div class="form-group">
-              <input
+              <!-- <input
                 type="text"
                 placeholder="Enter Game Code"
                 id="gameCodeInput"
                 autocomplete="off"
-              />
+              /> -->
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">▲</span>
+                </div>
+                <input
+                  type="text"
+                  id="gameCodeInput"
+                  class="form-control"
+                  placeholder="Room Code"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
             </div>
-            <button type="submit" class="btn btn-success" id="joinGameButton">
+            <button
+              type="submit"
+              class="btn btn-success btn-lg"
+              id="joinGameButton"
+            >
               Join Game
             </button>
           </div>
