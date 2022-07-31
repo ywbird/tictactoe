@@ -6,7 +6,7 @@ const { makeid } = require('./utils');
 const httpServer = createServer();
 const io = new Server(httpServer, {
   cors: {
-    origin: '*',
+    origin: 'https://ttt-w.netlify.app/',
   },
 });
 
